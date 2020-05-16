@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>mateatica</title>
+        <style>
+            body{
+                background-color: rgb(65, 65, 184);
+                color: white;
+                text-align: center;
+            }
+            section{
+                background-color: white;
+                color: black;
+                box-shadow: 2px 2px 5px black;
+                padding: 100px;
+                width: 200px;
+                height: 200px;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Eguação de segundo grau</h1>
+    <section id="corpo">
+        <div>
+            <p>digite o valor de a <input type="number" id="a"></p>
+            <p>digite o valor de b <input type="number" id="b"></p>
+            <p>digite o valor de c <input type="number" id="c"></p>
+            <input type="button" value="resultado" onclick="mostrar()">
+        </div>
+        <div id="resp">
+        </div>
+    </section>
+        <script>
+        function mostrar(){
+            var a1 = document.getElementById('a')
+            var b2 = document.getElementById('b')
+            var c3 = document.getElementById('c')
+            var a = Number(a1.value)
+            var b = Number(b2.value)
+            var c = Number(c3.value)
+            var res = document.getElementById('resp')
+            var d = (b**2) -4*a*c
+            var rd = d**0.5
+            if (d < 0) {
+                window.alert('ERRO! O delta desse numero é menor do que zero')
+            } else {
+                var x1 = (-b + rd)/(2*a)
+                var x2 = (-b - rd)/(2*a)
+                res.innerHTML = `x1 é igual a ${x1} e x2 é igual a ${x2}`
+            }
+        }
+        </script>
+    </body>
+</html>
